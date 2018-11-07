@@ -33,8 +33,7 @@
 
 <script>
 import Butter from "buttercms";
-const config = require("../../butter.json");
-var butter = Butter(config.key);
+var butter = Butter(process.env.VUE_APP_BUTTER_API_KEY);
 
 export default {
   name: "index",
