@@ -20,37 +20,38 @@
 </template>
 
 <script>
-import Butter from 'buttercms'
-const config = require('../../butter.json')
+import Butter from "buttercms";
+const config = require("../../butter.json");
 var butter = Butter(config.key);
 
 export default {
-  name: 'blog-post',
+  name: "blog-post",
   data() {
     return {
       post: {}
-    }
+    };
   },
-  created: function () {
-    this.getPost()
+  created: function() {
+    this.getPost();
   },
   methods: {
-    getPost: function () {
-      butter.post.retrieve(this.$route.params.slug)
+    getPost: function() {
+      butter.post
+        .retrieve(this.$route.params.slug)
         .then(res => {
-          this.post = res.data.data
+          this.post = res.data.data;
         })
         .catch(err => {
-          console.log(err)
-        })
+          console.log(err);
+        });
     }
   }
-}
+};
 </script>
 
 <style>
 p {
-  margin-top: 0px
+  margin-top: 0px;
 }
 
 img {

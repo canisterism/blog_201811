@@ -7,22 +7,22 @@
 </template>
 
 <script>
-import blogheader from './components/blogheader'
-import blogfooter from './components/blogfooter'
-import index from './components/Index'
+import blogheader from "./components/blogheader";
+import blogfooter from "./components/blogfooter";
+import index from "./components/Index";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     blogheader,
     index,
     blogfooter
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -30,9 +30,10 @@ export default {
   margin-top: 60px;
 }
 
-a, a:link, a:visited {
+a,
+a:link,
+a:visited {
   text-decoration: none;
   color: #2c3e50;
 }
-
 </style>

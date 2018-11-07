@@ -9,8 +9,7 @@ Vue.use(VueRouter)
 
 let router = new VueRouter({
   mode: 'history',
-  routes: [
-    {
+  routes: [{
       path: '*',
       redirect: '/index'
     },

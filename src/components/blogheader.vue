@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  name: 'blogHeader'
-}
+  name: "blogHeader"
+};
 </script>
 
 <style>

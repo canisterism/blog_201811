@@ -7,7 +7,9 @@ import Butter from 'buttercms'
 import App from './App'
 
 Vue.config.productionTip = false
-Vue.use(ElementUI, { locale })
+Vue.use(ElementUI, {
+  locale
+})
 const butter = Butter('464a98d163b954e9ac9ee91798f56547b0e48eb4');
 
 /* eslint-disable no-new */

@@ -22,7 +22,7 @@
     <el-row :gutter="20">
       <el-col class="article-card" v-for="(post, index) in posts" :span="14" :offset="5" :key="index" align-center style="padding: 0px;">
         <router-link :to="{ name: 'blog-post', params: { slug: post.slug }}" >
-          <img :src="post.featured_image" class="sumnail"></img>
+          <img :src="post.featured_image" class="sumnail"/>
           <h3>TITLE: {{post.title}}</h3>
           <p v-html="post.summary"></p>
         </router-link>
@@ -32,41 +32,45 @@
 </template>
 
 <script>
-import Butter from 'buttercms'
-const config = require('../../butter.json')
+import Butter from "buttercms";
+const config = require("../../butter.json");
 var butter = Butter(config.key);
 
 export default {
-  name: 'index',
-  data: function () {
+  name: "index",
+  data: function() {
     return {
       posts: []
-    }
+    };
   },
-  created: function () {
-    this.fetchPosts()
+  created: function() {
+    this.fetchPosts();
   },
   methods: {
-    fetchPosts: function () {
+    fetchPosts: function() {
       var vm = this;
-      butter.post.list({page: 1, page_size: 10})
+      butter.post
+        .list({ page: 1, page_size: 10 })
         .then(function(res) {
-          vm.posts = res.data.data
+          vm.posts = res.data.data;
         })
         .catch(function(err) {
-          console.log(err)
-        })
+          console.log(err);
+        });
     }
   }
-}
+};
 </script>
 
 <style>
-a, a:link, a:visited {
+a,
+a:link,
+a:visited {
   text-decoration: none;
 }
 
-#aboutme_button, #contact_button {
+#aboutme_button,
+#contact_button {
   color: #ffffff;
 }
 
@@ -86,7 +90,7 @@ a, a:link, a:visited {
   border: 1px solid #dcdfe6;
   border-color: #dcdfe6;
   color: #606266;
-  transition: .1s;
+  transition: 0.1s;
   font-weight: 500;
   font-size: 14px;
   border-radius: 4px;
@@ -99,10 +103,11 @@ a, a:link, a:visited {
 
 .article-card:hover {
   border-color: #c6e2ff;
-  background-color: #ecf5ff
+  background-color: #ecf5ff;
 }
 
-.article-card h3, p {
+.article-card h3,
+p {
   color: #606266;
 }
 </style>
